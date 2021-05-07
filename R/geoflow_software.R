@@ -519,6 +519,19 @@ register_software <- function(){
         pwd = list(def = "Password for Gbif authentication", class = "character"),
         email = list(def = "Email address for sending notification ", class = "character")
       )
+    ),
+    #-------------------------------------------------------------------------------------------------------
+    #FISHBASE/SEALIFEBASE CLIENT
+    #-------------------------------------------------------------------------------------------------------
+    geoflow_software$new(
+      software_type = "fishbase",
+      definition = "Fishbase and sealifebase API Client",
+      packages = list(),
+      handler = list,
+      arguments = list(
+        server = list(def = "Name of database to connect either 'fishbase' or 'sealifebase', by default 'fishbase' is selected", class = "character",choices = list("fishbase","sealifebase")),
+        version = list(def = "Release version for the database, by default lastest is selected", class = "character")
+      )
     )
   )
   .geoflow$software <- software
